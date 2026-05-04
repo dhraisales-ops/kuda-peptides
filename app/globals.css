@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #050505;
+  --color-surface: #0B0B0F;
+  --color-card: #111116;
+  --color-paper: #ffffff;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-purple: rgba(124, 58, 237, 0.35);
+  --color-violet-deep: #5b21b6;
+  --color-violet-royal: #7c3aed;
+  --color-violet-glow: rgba(124, 58, 237, 0.35);
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: #ffffff;
+  font-feature-settings: "ss01", "cv11";
+}
+
+/* Display headlines */
+.font-display {
+  font-feature-settings: "ss01";
+  font-optical-sizing: auto;
+}
+
+/* Purple glow utility */
+.glow-purple {
+  box-shadow: 0 0 40px rgba(124, 58, 237, 0.15), 0 0 80px rgba(124, 58, 237, 0.06);
+}
+
+.glow-purple-sm {
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.12);
+}
+
+/* Card dark surface */
+.card-dark {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+}
+
+.card-dark:hover {
+  border-color: var(--color-border-purple);
+}
+
+/* Number tabular feature for prices */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Fine hairline divider */
+.hairline {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 20%,
+    rgba(255, 255, 255, 0.08) 80%,
+    transparent 100%
+  );
+}
+
+/* Purple hairline */
+.hairline-purple {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(124, 58, 237, 0.4) 20%,
+    rgba(124, 58, 237, 0.4) 80%,
+    transparent 100%
+  );
+}
+
+/* Ultra-thin scroll on category filters */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+/* Vial mockup base */
+.vial-glass {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.92) 0%,
+    rgba(245, 245, 247, 0.96) 50%,
+    rgba(255, 255, 255, 0.92) 100%
+  );
+}
+
+.vial-cap {
+  background: linear-gradient(
+    180deg,
+    #4c1d95 0%,
+    #3b0764 40%,
+    #5b21b6 60%,
+    #3b0764 100%
+  );
+}
+
+.vial-shine {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.7) 30%,
+    rgba(255, 255, 255, 0.95) 50%,
+    rgba(255, 255, 255, 0.7) 70%,
+    transparent 100%
+  );
+}
+
+.label-grain {
+  background-image: radial-gradient(rgba(91, 33, 182, 0.06) 1px, transparent 1px);
+  background-size: 3px 3px;
+}
+
+/* QR grid */
+.qr-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  gap: 1px;
+}
+
+/* Focus ring */
+@layer base {
+  :focus-visible {
+    outline: 2px solid var(--color-violet-royal);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+/* Dark scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0B0F;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(124, 58, 237, 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(124, 58, 237, 0.5);
+}
